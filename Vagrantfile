@@ -14,7 +14,6 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
 #  config.vm.box = "base"
   config.vm.box = "hashicorp/precise32"
-  #config.vm.network "private_network", type: "dhcp"
   config.vm.network "public_network"
 #  config.vm.provision :shell, path: "bootstrap.sh"
 
