@@ -17,6 +17,12 @@ Vagrant.configure(2) do |config|
   config.vm.network "public_network"
 #  config.vm.provision :shell, path: "bootstrap.sh"
 
+	config.vm.define "vm1" do |vm1|
+  		vm1.vm.box = "hashicorp/precise32"
+		vm1.vm.host_name = "vm1"
+	end
+
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
