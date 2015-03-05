@@ -22,6 +22,15 @@ Vagrant.configure(2) do |config|
 		vm1.vm.host_name = "vm1"
 	end
 
+	config.vm.define "git1" do |git1|
+  		git1.vm.box = "hashicorp/precise32"
+		git1.vm.host_name = "git1"
+   		git1.vm.provision "shell", inline: <<-SHELL
+     		sudo apt-get update
+     		sudo apt-get install -y git
+   		SHELL
+	end
+
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
