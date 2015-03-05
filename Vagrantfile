@@ -25,6 +25,10 @@ Vagrant.configure(2) do |config|
 	config.vm.define "git1" do |git1|
   		git1.vm.box = "hashicorp/precise32"
 		git1.vm.host_name = "git1"
+  		config.vm.provider "virtualbox" do |vb|
+#     		vb.gui = true
+     		vb.memory = "512"
+   		end
    		git1.vm.provision "shell", inline: <<-SHELL
      		sudo apt-get update
      		sudo apt-get install -y git
