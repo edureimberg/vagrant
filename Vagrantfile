@@ -32,6 +32,9 @@ Vagrant.configure(2) do |config|
    		git1.vm.provision "shell", inline: <<-SHELL
      		sudo apt-get update
      		sudo apt-get install -y git
+			sudo useradd -m \
+				-p '$6$9nbnduan$5jpF1nPFtiefQ4f3RGWa0zpWcMoipc027ogqentrRaybYpdwJ4ko6notdbpnCs2cQojJ9JeqpsNGtx1/TI6z..' \
+				-s /bin/bash eduardo
    		SHELL
 	end
 
