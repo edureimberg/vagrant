@@ -31,11 +31,12 @@ Vagrant.configure(2) do |config|
    		end
    		git1.vm.provision "shell", inline: <<-SHELL
      		sudo apt-get update
-     		sudo apt-get install -y git
+     		sudo apt-get install -y git apache2
 			sudo useradd -m \
 				-p '$6$9nbnduan$5jpF1nPFtiefQ4f3RGWa0zpWcMoipc027ogqentrRaybYpdwJ4ko6notdbpnCs2cQojJ9JeqpsNGtx1/TI6z..' \
 				-s /bin/bash eduardo
    		SHELL
+  		git1.vm.network "forwarded_port", guest: 80, host: 8080
 	end
 
 
